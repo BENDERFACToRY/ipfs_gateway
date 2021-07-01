@@ -1,0 +1,18 @@
+networks:
+  default:
+    external:
+      name: proxy
+
+services:
+  ipfs:
+    image: ipfs/go-ipfs
+    volumes:
+      - "/home/live/ipfs:/data/ipfs"
+    expose:
+      - "4001"
+      - "4001/udp"
+      - "8080"
+    environment:
+      - VIRTUAL_HOST=ipfs.benderfactory.com
+      - LETSENCRYPT_HOST=ipfs.benderfactory.com
+      - VIRTUAL_PORT=8080
