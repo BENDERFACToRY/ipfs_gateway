@@ -8,9 +8,9 @@ services:
     image: ipfs/go-ipfs
     volumes:
       - "/home/live/ipfs:/data/ipfs"
+    ports:
+      - "4001:4001"
     expose:
-      - "4001"
-      - "4001/udp"
       - "8080"
     environment:
       - VIRTUAL_HOST=ipfs.benderfactory.com
