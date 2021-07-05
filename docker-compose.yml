@@ -6,7 +6,7 @@ networks:
 services:
   ipfs:
     restart: unless-stopped
-    image: ipfs/go-ipfs
+    image: ipfs/go-ipfs:v0.8.0
     volumes:
       - "/home/live/ipfs:/data/ipfs"
     ports:
